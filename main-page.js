@@ -33,10 +33,7 @@ const growFlower = () => {
     };
 };
 
-// Event Listeners
-document.getElementsByClassName('pot')[0].addEventListener('click', () => {
-    growFlower();
-});
+growFlower();
 
 // Code for page-title carousel
 const pageTitles = document.getElementsByClassName('page-title');
@@ -67,11 +64,6 @@ const changePage = (newPageNumber) => {
             }
             
         });
-        // window.setTimeout(() => {
-        //     pageTitles[pageNumber].style.transform = 'translateX(3000px)';
-        //     pageTitles[pageNumber].style.visibility = 'hidden';
-        //     pageNumber = newPageNumber;
-        // }, 1000);
 
         jumboBubbles[newPageNumber].style.visibility = 'visible';
         jumboBubbles[newPageNumber].style.transform = 'scale(.01)';
