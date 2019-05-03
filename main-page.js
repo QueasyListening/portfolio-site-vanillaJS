@@ -41,35 +41,42 @@ const jumboBubbles = document.getElementsByClassName('jumbo-bubble');
 let pageNumber = 0;
 
 const changePage = (newPageNumber) => {
+    if (newPageNumber >= pageTitles.length)
+        newPageNumber = 0;
+
+    // Set active nav-item    
+    navItems[pageNumber].classList.remove('active');
+    navItems[newPageNumber].classList.add('active');
+    
+    // Disable buttons during transition
     nextButton.disabled = true;
     navItems.forEach(item => {
         item.disabled = true;
     });
 
     let firstTransition = true;
-    if (newPageNumber >= pageTitles.length)
-            newPageNumber = 0;
-        jumboBubbles[pageNumber].style.animation = 'bubble-shrink 1s ease-out forwards';
-        pageTitles[pageNumber].style.transform = 'translateX(-2000px)';
-        pageTitles[pageNumber].addEventListener('webkitTransitionEnd', () => {
-            if (firstTransition) {
-                firstTransition = false;
-                pageTitles[pageNumber].style.transform = 'translateX(3000px)';
-                pageTitles[pageNumber].style.visibility = 'hidden';
-                pageNumber = newPageNumber;
-                nextButton.disabled = false;
-                navItems.forEach(item => {
-                    item.disabled = false;
-                });
-            }
-            
-        });
 
-        jumboBubbles[newPageNumber].style.visibility = 'visible';
-        jumboBubbles[newPageNumber].style.transform = 'scale(.01)';
-        jumboBubbles[newPageNumber].style.animation = 'bubble-grow .5s ease-out 1s forwards';
-        pageTitles[newPageNumber].style.transform = 'translateX(0px)';
-        pageTitles[newPageNumber].style.visibility = 'visible';
+    jumboBubbles[pageNumber].style.animation = 'bubble-shrink 1s ease-out forwards';
+    pageTitles[pageNumber].style.transform = 'translateX(-2000px)';
+    
+    pageTitles[pageNumber].addEventListener('transitionend', () => {
+        if (firstTransition) {
+            firstTransition = false;
+            pageTitles[pageNumber].style.transform = 'translateX(3000px)';
+            pageTitles[pageNumber].style.visibility = 'hidden';
+            pageNumber = newPageNumber;
+            nextButton.disabled = false;
+            navItems.forEach(item => {
+                item.disabled = false;
+            });
+        };    
+    }, { once: true });
+
+    jumboBubbles[newPageNumber].style.visibility = 'visible';
+    jumboBubbles[newPageNumber].style.transform = 'scale(.01)';
+    jumboBubbles[newPageNumber].style.animation = 'bubble-grow .5s ease-out 1s forwards';
+    pageTitles[newPageNumber].style.transform = 'translateX(0px)';
+    pageTitles[newPageNumber].style.visibility = 'visible';
 }
 
 // add event listeners for nav items 
