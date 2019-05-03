@@ -61,7 +61,7 @@ const changePage = (newPageNumber) => {
 // Navbar motion
 const nav = document.querySelector('.nav-container');
 const slideOut = () => {
-    nav.style.right === '0px' ? nav.style.right = '-190px' : nav.style.right = '0';
+    nav.style.transform === 'translateX(-191px)' ? nav.style.transform = 'translateX(0)' : nav.style.transform = 'translateX(-191px)';
 }
 
 // Event Listeners
