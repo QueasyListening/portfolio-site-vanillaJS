@@ -13,6 +13,20 @@ p {
     font-family: 'Oswald', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    transition: color .5s ease-in-out
+}
+
+a:hover {
+    /*color: rgb(226,114,91);*/
+    color: saddlebrown;
+}
+
+a:active {
+    color: saddlebrown;
+}
+
 /* button:hover {
     cursor: pointer;
 } */
@@ -101,8 +115,16 @@ p {
     background-color: green;
     border: none;
     font-weight: 550;
-    text-decoration: underline;
     color: rgb(44, 44, 44);
+    transition: color .5s ease-in-out;
+}
+
+.nav-item:hover {
+    color: saddlebrown;
+}
+
+.nav-item:active {
+    color: saddlebrown;
 }
 
 /* Flower */ 
@@ -649,7 +671,7 @@ footer {
     color: rgb(44, 44, 44);
 }
 
-.footer-item {
+.footer-section {
     font-family: 'Oswald', sans-serif;
     font-weight:1000;
     height: 100%;
@@ -659,32 +681,20 @@ footer {
     align-items: left;
 }
 
-.footer-item a {
-    
-}
-
-.personal-links-item {
-    margin: 4px 0;
+.footer-item {
+    margin: 6px 0;
     color: rgb(44, 44, 44);
+    font-size: 116%;
 }
 
 .personal-info {
     align-items: center;
 }
 
-.personal-info-item {
-    margin: 4px 0;
-    color: rgb(44, 44, 44);
-}
-
 .project-links {
     align-items: center;
 }
 
-.project-links-item {
-    margin: 4px 0;
-    color: rgb(44, 44, 44);
-}
 .footer-icon {
     margin-right: 7px;
 }
@@ -698,8 +708,8 @@ footer {
     }
 
     .parallelogram {
-        height: 101px;
-        width: 75px;
+        height: 85px;
+        width: 62px;
     }
 
     .jumbo-bubble {

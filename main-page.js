@@ -1,3 +1,6 @@
+const nextButton = document.querySelector('.next-btn');
+const navItems = Array.from(document.getElementsByClassName('nav-item'));
+
 // Code for growing the flower
 const growFlower = () => {
     let stem = document.getElementsByClassName('stem')[0];
@@ -41,15 +44,34 @@ const jumboBubbles = document.getElementsByClassName('jumbo-bubble');
 let pageNumber = 0;
 
 const changePage = (newPageNumber) => {
+    nextButton.disabled = true;
+    navItems.forEach(item => {
+        item.disabled = true;
+    });
+
+    let firstTransition = true;
     if (newPageNumber >= pageTitles.length)
             newPageNumber = 0;
         jumboBubbles[pageNumber].style.animation = 'bubble-shrink 1s ease-out forwards';
         pageTitles[pageNumber].style.transform = 'translateX(-2000px)';
-        window.setTimeout(() => {
-            pageTitles[pageNumber].style.transform = 'translateX(3000px)';
-            pageTitles[pageNumber].style.visibility = 'hidden';
-            pageNumber = newPageNumber;
-        }, 1000);
+        pageTitles[pageNumber].addEventListener('webkitTransitionEnd', () => {
+            if (firstTransition) {
+                firstTransition = false;
+                pageTitles[pageNumber].style.transform = 'translateX(3000px)';
+                pageTitles[pageNumber].style.visibility = 'hidden';
+                pageNumber = newPageNumber;
+                nextButton.disabled = false;
+                navItems.forEach(item => {
+                    item.disabled = false;
+                });
+            }
+            
+        });
+        // window.setTimeout(() => {
+        //     pageTitles[pageNumber].style.transform = 'translateX(3000px)';
+        //     pageTitles[pageNumber].style.visibility = 'hidden';
+        //     pageNumber = newPageNumber;
+        // }, 1000);
 
         jumboBubbles[newPageNumber].style.visibility = 'visible';
         jumboBubbles[newPageNumber].style.transform = 'scale(.01)';
@@ -58,6 +80,14 @@ const changePage = (newPageNumber) => {
         pageTitles[newPageNumber].style.visibility = 'visible';
 }
 
+// add event listeners for nav items 
+navItems.forEach((item, i) => {
+   item.addEventListener('click', () => {
+       let page = i;
+        changePage(page);
+    });
+});
+
 // Navbar motion
 const nav = document.querySelector('.nav-container');
 const slideOut = () => {
@@ -65,7 +95,7 @@ const slideOut = () => {
 }
 
 // Event Listeners
-document.querySelector('.next-btn').addEventListener('click', () => {
+nextButton.addEventListener('click', () => {
     changePage(pageNumber+1);
 });
 
