@@ -1,6 +1,7 @@
 body {
     font-family: 'Oswald', sans-serif;
     background-color: rgb(44, 44, 44);
+    overflow-x: hidden;
 }
 
 a {
@@ -27,10 +28,10 @@ a:active {
 /* Navbar */
 .nav-container {
     position: fixed;
-    top: 10%;
+    top: 80px;
     right: -191px;
     width: 190px;
-    height: 100%;
+    bottom: 0;
     transition: transform .5s ease-out;
     z-index: 100;
 }
@@ -65,9 +66,9 @@ a:active {
 
 .navbar {
     width: 190px;
-    position: absolute;
+    position: relative;
     right: 0;
-    height: 65%;
+    height: 70%;
     padding: 25px 0;
     background-color: green;
     border: 5px solid black;
@@ -83,7 +84,7 @@ a:active {
     height: 90.5px;
     width: 7px;
     position: absolute;
-    top: 54.5px;
+    top: 55px;
     background-color: green;
     right: 184px;
     transition: all .5s ease-out;
@@ -91,8 +92,7 @@ a:active {
 }
 
 .nav-item {
-    font-size: 1.55rem;
-    margin: 25px 0;
+    font-size: 161%;
     background-color: green;
     border: none;
     font-weight: 550;
@@ -770,8 +770,8 @@ footer {
     .pot-outline {
         width: 36px;
         border-top: 20px solid brown;
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
         bottom: -20px;
     }
 
@@ -791,7 +791,7 @@ footer {
 
     .page-title {
        font-size: 400%;
-       right: 50px;
+       right: 64px;
     }
 
     .parallelogram {
@@ -820,6 +820,78 @@ footer {
 
 @media(max-width: 610px) {
     .page-title {
-        right: 50px;
+        font-size: 10vw;
+        -webkit-text-stroke-width: 3px;
+        margin-top: 10px;
+        position: absolute;
+        right: 30px;
+    }
+
+    .parallelogram {
+        height: 11vw;
+        width: 7.5vw;
+    }
+
+    .stem {
+        display: none;
+    }
+
+    .pot {
+        display: none;
+    }
+
+    .pot-outline {
+        display: none;
+    }
+
+    .flower-container {
+        top: 9vw;
+        left: 0;
+    }
+
+    .droplet {
+        height: 6vw;
+        width: 6vw;
+        border-width: 2px;
+    }
+
+    .jumbo-bubble {
+        left: 10px;
+        right: 30px;
+        top: 83px;
+        bottom: unset;
+        height: 68%;
+        padding: 25px;
+    }
+
+    .bubble-text {
+        font-size: 84%;
+    }
+
+    .signature {
+        font-size: 125%;
+        margin-right: 25px;
+    }
+
+    footer {
+        top: 88vh;
+        bottom: unset;
+        height: unset;
+        flex-direction: column;
+        position: absolute;
+    }
+
+    .personal-links {
+        align-items: center;
+        flex-direction: column-reverse
+    }
+
+    .personal-info {
+        order: -1;
+        flex-direction: column-reverse
+    }
+
+    .name {
+        display: none;
     }
 }
