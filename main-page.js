@@ -19,7 +19,7 @@ const growFlower = () => {
                     leaf.style.left = '-29px';
                     leaf.style.bottom = '18px';
                 } else {
-                    leaf.style.left = '2px';
+                    leaf.style.left = '1px';
                     leaf.style.bottom = '38px';
                 }
             });    
