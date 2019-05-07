@@ -68,12 +68,12 @@ a:active {
     position: absolute;
     right: 0;
     height: 65%;
-    padding-top: 50px;
+    padding: 25px 0;
     background-color: green;
     border: 5px solid black;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-around;
     border-radius: 10px 0 0 10px;
     border-right: none;
     z-index: 100;
@@ -83,7 +83,7 @@ a:active {
     height: 90.5px;
     width: 7px;
     position: absolute;
-    top: 50px;
+    top: 54.5px;
     background-color: green;
     right: 184px;
     transition: all .5s ease-out;
@@ -486,19 +486,11 @@ a:active {
     justify-content: space-around
 }
 
-.self-pic {
-    height: 100%;
-    border-radius: 3px;
-}
-
-.intro-content {
-    height: 100%;
-    width: 60%;
-}
-
 .intro-pic {
     height: 90%;
     border-radius: 4px;
+    margin: 0px 0 15px 15px;
+    float: right;
 }
 
 .bubble-header {
@@ -517,13 +509,13 @@ a:active {
     font-size: 105%;
     line-height: 1.1;
     overflow: auto;
-    height: 79%;
+    height: 100%;
 }
 
 .signature {
-    text-align: right;
-    font-size: 200%;
-    margin-right: 25px;
+    float: right;
+    font-size: 150%;
+    margin-right: 75px;
     margin-top: 10px;
 }
 
@@ -700,7 +692,7 @@ footer {
 }
 
 /* media queries */
-@media(max-width: 1256px) {
+@media(max-width: 1300px) {
     .page-title {
         font-size: 511%;
         margin-top: 25px;
@@ -717,7 +709,7 @@ footer {
     }
 
     .bubble-text {
-
+   
     }
 
     .intro-pic {
@@ -726,39 +718,31 @@ footer {
 
     .signature {
         font-size: 150%;
+        margin-right: 75px;
     }
 }
 
-@media(max-width: 1105px) {
-    .intro-content {
-        width: 75%;
-    }
-
-    .bubble-text {
-        font-size: 90%;
-        padding: 0 15px;
-    }
-
+@media(max-width: 1150px) {
     .intro-pic {
-        height: 60%;
+        height: 50%;
     }
+
+    .next-btn {
+        width: 125px;
+        height: 69px;
+        font-size: 160%;
+        bottom: 29%;
+    }
+    
+    .jumbo-bubble {
+        right: 190px;
+    }
+
 }
 
-@media(max-width: 958px) {
-    .stem {
-        display: none;
-    }
-
-    .pot {
-        display: none;
-    }
-
-    .pot-outline {
-        display: none;
-    }
-
+@media(max-width: 964px) {
     .flower-container {
-        height: 85%;
+        bottom: 152px;
         left: 19px;
         top: 83px;
     }
@@ -767,6 +751,42 @@ footer {
         height: 50px;
         width: 50px;
         z-index: 3;
+    }
+
+    .pot {
+        width: 46px;
+        height: 11px;
+    }
+
+    .pot:after {
+        width: 18px;
+        border-top: 18px solid #e2725b;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        left: 4.5px;
+        top: 9px;
+    }
+
+    .pot-outline {
+        width: 36px;
+        border-top: 20px solid brown;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        bottom: -20px;
+    }
+
+    .stem {
+        width: 6px;
+    }
+
+    .leaf-1 {
+        left: -23px;
+        bottom: 12px;
+    }
+
+    .leaf-2 {
+        left: -4px;
+        bottom: 32px;
     }
 
     .page-title {
@@ -780,13 +800,13 @@ footer {
     }
 
     .jumbo-bubble {
-        left: 43px;
-        right: 75px;
+        left: 101px;
+        right: 60px;
     }
 
     .bubble-text {
-        height: 86%;
-        font-size: 105%;
+        font-size: 100%;
+        line-height: 1;
     }
 
     .next-btn {
@@ -798,7 +818,7 @@ footer {
     }
 }
 
-@media(max-width: 659px) {
+@media(max-width: 610px) {
     .page-title {
         right: 50px;
     }

@@ -12,16 +12,29 @@ const growFlower = () => {
             
     const displayLeaves = () => {
         const leaves = Array.from(document.getElementsByClassName('leaf'));
-        leaves.forEach( (leaf, i) => {
-            leaf.style.transform = 'scale(1)';
-            if (i % 2 === 0) {
-                leaf.style.left = '-32px';
-                leaf.style.bottom = '26px';
-            } else {
-                leaf.style.left = '8px';
-                leaf.style.bottom = '52px';
-            }
-        });
+        if (window.innerWidth < 964) {
+            leaves.forEach( (leaf, i) => {
+                leaf.style.transform = 'scale(.8)';
+                if (i % 2 === 0) {
+                    leaf.style.left = '-29px';
+                    leaf.style.bottom = '18px';
+                } else {
+                    leaf.style.left = '2px';
+                    leaf.style.bottom = '38px';
+                }
+            });    
+        } else {
+            leaves.forEach( (leaf, i) => {
+                leaf.style.transform = 'scale(1)';
+                if (i % 2 === 0) {
+                    leaf.style.left = '-32px';
+                    leaf.style.bottom = '26px';
+                } else {
+                    leaf.style.left = '8px';
+                    leaf.style.bottom = '52px';
+                }
+            });
+        };
     };
     
     const displayFlower = () => {
