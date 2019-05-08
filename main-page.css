@@ -10,12 +10,12 @@ a {
 }
 
 a:hover {
-    /*color: rgb(226,114,91);*/
-    color: saddlebrown;
+    color: goldenrod;
+    cursor: pointer;
 }
 
 a:active {
-    color: saddlebrown;
+    color: goldenrod;
 }
 
 @font-face {
@@ -31,7 +31,6 @@ a:active {
     top: 80px;
     right: -191px;
     width: 190px;
-    bottom: 0;
     transition: transform .5s ease-out;
     z-index: 100;
 }
@@ -55,12 +54,10 @@ a:active {
     z-index: 100;
 }
 
-.hamburger-line {
+.pull-tab div {
     height: 4px;
     width: 45px;
     background-color: black;
-    position: relative;
-    top: 25px;
     margin: 7px 15px;
 }
 
@@ -68,7 +65,7 @@ a:active {
     width: 190px;
     position: relative;
     right: 0;
-    height: 70%;
+    height: 449px;
     padding: 25px 0;
     background-color: green;
     border: 5px solid black;
@@ -91,25 +88,18 @@ a:active {
     z-index: 100;
 }
 
-.nav-item {
+.navbar li {
     font-size: 161%;
+    text-align: center;
     background-color: green;
     border: none;
     font-weight: 550;
     color: rgb(44, 44, 44);
-    transition: color .5s ease-in-out;
+    transition: color .5s ease-out;
 }
 
-.active {
-    color: saddlebrown;
-}
-
-.nav-item:hover {
-    color: saddlebrown;
-}
-
-.nav-item:active {
-    color: saddlebrown;
+.navbar .active {
+    color: goldenrod;
 }
 
 /* Flower */ 
@@ -124,7 +114,7 @@ a:active {
     align-items: flex-end;
 }
 
-.droplet {
+.petal {
     border-radius: 5px 90%;
     border-style: solid;
     border-width: 5px;
@@ -136,88 +126,68 @@ a:active {
     left: 50%;
     transform-origin: left top;
     opacity: 0;
-    z-index: 0;
-    
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    animation-timing-function: ease-out;
+    animation-duration: 5s;
 }
 
-#no1 {
+.petal-odd {
     background: goldenrod;
-    animation: spin 5s ease-out;
-    animation-fill-mode: forwards;
+}
+
+.petal-even {
+    background: orangered;
+}
+
+.petal-1 {
+    animation-name: spin;
     animation-delay: 0s;
-    animation-play-state: paused;
 }
 
-#no2 {
-    background: orangered;
-    animation: spin2 5s ease-out;
-    animation-fill-mode: forwards;
+.petal-2 {
+    animation-name: spin2;
     animation-delay: 0.05s;
-    animation-play-state: paused;
 }
 
-#no3 {
-    background: goldenrod;
-    animation: spin3 5s ease-out;
-    animation-fill-mode: forwards;
+.petal-3 {
+    animation-name: spin3;
     animation-delay: 0.1s;
-    animation-play-state: paused;
 }
 
-#no4 {
-    background: orangered;
-    animation: spin4 5s ease-out;
-    animation-fill-mode: forwards;
+.petal-4 {
+    animation-name: spin4;
     animation-delay: 0.15s;
-    animation-play-state: paused;
 }
 
-#no5 {
-    background: goldenrod;
-    animation: spin5 5s ease-out;
-    animation-fill-mode: forwards;
+.petal-5 {
+    animation-name: spin5;
     animation-delay: 0.2s;
-    animation-play-state: paused;
 }
 
-#no6 {
-    background: orangered;
-    animation: spin6 5s ease-out;
-    animation-fill-mode: forwards;
+.petal-6 {
+    animation-name: spin6;
     animation-delay: 0.25s;
-    animation-play-state: paused;
 }
 
-#no7 {
-    background: goldenrod;
-    animation: spin7 5s ease-out;
-    animation-fill-mode: forwards;
+.petal-7 {
+    animation-name: spin7;
     animation-delay: 0.30s;
-    animation-play-state: paused;
 }
 
-#no8 {
-    background: orangered;
-    animation: spin8 5s ease-out;
-    animation-fill-mode: forwards;
+.petal-8 {
+    animation-name: spin8;
     animation-delay: 0.35s;
-    animation-play-state: paused;
 }
 
-#no9 {
-    background: goldenrod;
-    animation: spin9 5s ease-out;
-    animation-fill-mode: forwards;
+.petal-9 {
+    animation-name: spin9;
     animation-delay: 0.40s;
-    animation-play-state: paused;
 }
 
-#no10 {
-    background: orangered;
-    animation: spin10 5s ease-out;
-    animation-fill-mode: forwards;
+.petal-10 {
+    animation-name: spin10;
     animation-delay: 0.45s;
-    animation-play-state: paused;
 }
 
 .stem {

@@ -38,7 +38,7 @@ const growFlower = () => {
     };
     
     const displayFlower = () => {
-        const droplets = Array.from(document.getElementsByClassName('droplet'));
+        const droplets = Array.from(document.getElementsByClassName('petal'));
         
         droplets.forEach(droplet => {
             droplet.style.animationPlayState = 'running';
