@@ -1,5 +1,9 @@
 const nextButton = document.querySelector('.next-btn');
-const navItems = Array.from(document.getElementsByClassName('nav-item'));
+const navItems = Array.from(document.querySelectorAll('.navbar a'));
+const nav = document.querySelector('.nav-container');
+const pageTitles = document.getElementsByClassName('page-title');
+const jumboBubbles = document.getElementsByClassName('jumbo-bubble');
+let pageNumber = 0;
 
 // Code for growing the flower
 const growFlower = () => {
@@ -48,11 +52,7 @@ const growFlower = () => {
 
 growFlower();
 
-// Code for page-title carousel
-const pageTitles = document.getElementsByClassName('page-title');
-const jumboBubbles = document.getElementsByClassName('jumbo-bubble');
-let pageNumber = 0;
-
+// Code for page changing
 const changePage = (newPageNumber) => {
     if (newPageNumber >= pageTitles.length)
         newPageNumber = 0;
@@ -92,17 +92,9 @@ const changePage = (newPageNumber) => {
     pageTitles[newPageNumber].style.visibility = 'visible';
 }
 
-// add event listeners for nav items 
-navItems.forEach((item, i) => {
-   item.addEventListener('click', () => {
-       let page = i;
-        changePage(page);
-    });
-});
 
 // Navbar motion
-const nav = document.querySelector('.nav-container');
-const slideOut = () => {
+const slideNav = () => {
     nav.style.transform === 'translateX(-191px)' ? nav.style.transform = 'translateX(0)' : nav.style.transform = 'translateX(-191px)';
 }
 
@@ -111,4 +103,13 @@ nextButton.addEventListener('click', () => {
     changePage(pageNumber+1);
 });
 
-document.querySelector('.pull-tab').addEventListener('click', slideOut); 
+document.querySelector('.pull-tab').addEventListener('click', slideNav); 
+
+// add event listeners for nav items 
+navItems.forEach((item, i) => {
+   item.addEventListener('click', () => {
+       let page = i;
+        changePage(page);
+        slideNav();
+    });
+});
