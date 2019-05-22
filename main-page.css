@@ -14,6 +14,10 @@ a:hover {
     cursor: pointer;
 }
 
+a:visited {
+    color: #38AFF4;
+}
+
 a:active {
     color: goldenrod;
 }
@@ -463,17 +467,6 @@ a:active {
     float: right;
 }
 
-.bubble-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 41px;
-}
-
-.bubble-title {
-    margin: 20px 20px 0;
-}
-
 .bubble-text {
     font-family: 'Roboto', sans-serif;
     font-size: 105%;
@@ -491,6 +484,7 @@ a:active {
 
 .project-bubble {
     justify-content: left;
+    flex-wrap: wrap;
 }
 
 .flip-card {
@@ -559,7 +553,32 @@ a:active {
 
 .background-pic {
     float: left;
-    margin: 0 15px 15px 0;
+    margin: 0 15px 10px 0;
+}
+
+.wrap-bubble {
+    flex-wrap: wrap;
+}
+
+.bubble-header {
+    width: 100%;
+    display: flex;
+    margin-top: 11px;
+    margin-bottom: 25px;
+}
+
+.education-title {
+    font-size: 331%;
+    margin: 15px auto 0 25px;
+}
+
+.education-pic {
+    max-height: 100px;
+}
+
+.about-bubble {
+    padding: 40px 10%;
+    flex-wrap: wrap;
 }
 
 .tech-logo {
@@ -567,11 +586,12 @@ a:active {
 }
 
 .about-header {
-    justify-content:space-around;
+    justify-content:space-between;
 }
 
 .about-text {
-    margin-bottom: 110px;
+    margin-top: 25px;
+
 }
 
 /* Bubble Animations */
@@ -710,6 +730,10 @@ footer {
     .signature {
         font-size: 150%;
         margin-right: 75px;
+    }
+
+    .about-bubble {
+        padding: 40px 10%;
     }
 }
 

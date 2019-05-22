@@ -8,6 +8,25 @@
         <link rel="stylesheet" type="text/css" href="main-page.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet">
+
+        <!-- Favicon Links -->
+        <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="./favicons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="./favicons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="./favicons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="./favicons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="./favicons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/favicons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="./favicons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="./favicons/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
     </head>
     <body>    
         <!-- Flower -->
@@ -111,10 +130,10 @@
         </div>
         <!-- Education bubble and title-->
         <h1 class="page-title"><div class="parallelogram"></div>Education</h1>
-        <div class="jumbo-bubble">
+        <div class="jumbo-bubble wrap-bubble">
             <div class="bubble-header">
-                <h2 class="bubble-title">Lambda School</h2>
-                <img class="selfie" src="./images/lambda_logo.png"></img>
+                <img class="education-pic" src="./images/lambda_logo.png"></img>
+                <h2 class="education-title">Lambda School</h2>
             </div>
             <p class="bubble-text">
                 Lambda School is a six month fully immersive Computer Science and Engineering Academy
@@ -128,14 +147,16 @@
         </div>
         <!-- About bubble and title -->
         <h1 class="page-title"><div class="parallelogram"></div>About</h1>
-        <div class="jumbo-bubble">
+        <div class="jumbo-bubble about-bubble">
         <div class="bubble-header about-header">
             <img class="tech-logo" src="./images/javascript.png"></img>
             <img class="tech-logo" src="./images/css.png"></img>
             <img class="tech-logo" src="./images/html-icon.png"></img>
         </div>
         <p class="bubble-text about-text">
-            This site was built with GatsbyJS, a modern site generator for React. It utilizes ReactJS, Javascript, CSS3 and HTML5.
+            This site was built with good old fashioned Vanilla Javascript, CSS3 and HTML5.
+            You can find the source code for it at <a href="https://github.com/joshuacoyne/portfolio-site-vanillaJS">https://github.com/joshuacoyne/portfolio-site-vanillaJS</a>
+            Feel free to contact me with any commments or suggestions!
         </p>
         </div>
         <!-- Next Button -->
@@ -145,7 +166,7 @@
             <div class="footer-section personal-links">
                 <a href="https://www.linkedin.com/in/josh-coyne" class="footer-item"><i class="fab fa-linkedin footer-icon"></i>www.linkedin.com/in/josh-coyne</a>
                 <a href="https://github.com/joshuacoyne" class="footer-item"><i class="fab fa-github footer-icon"></i>github.com/joshuacoyne</a>
-                <a href={resume} class="footer-item"><i class="fas fa-file-pdf footer-icon"></i>Resume</a>
+                <a href="./Josh_Coyne_Resume.pdf" class="footer-item"><i class="fas fa-file-pdf footer-icon"></i>Resume</a>
             </div>
             <div class="footer-section personal-info">
                 <div class="footer-item name">Josh Coyne</div>
